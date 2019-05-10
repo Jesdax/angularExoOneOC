@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
+  firstPost = 'Mon premier post';
+  twoPost = 'Mon deuxième post';
+  threePost = 'Mon troisième post';
   constructor() { }
 
   ngOnInit() {
