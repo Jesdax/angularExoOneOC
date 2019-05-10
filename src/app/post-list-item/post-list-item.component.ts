@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-post-list-item',
@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListItemComponent implements OnInit {
 
+  @Input() title: string;
+  @Input() contentItem: string;
+  onMore() {
+    console.log('+1');
+  }
   constructor() { }
 
   ngOnInit() {
