@@ -7,14 +7,31 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class PostListItemComponent implements OnInit {
 
+  @Input() loveIts: number = null;
   @Input() title: string;
   @Input() contentItem: string;
+
+  update = new Date();
   onMore() {
-    console.log('+1');
+    this.loveIts++;
+    return this.loveIts;
+  }
+
+  onLess() {
+    this.loveIts--;
+    return this.loveIts;
   }
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getColor() {
+    if (this.loveIts > 0) {
+      return 'green';
+    } else if (this.loveIts < 0) {
+      return 'red';
+    }
   }
 
 }

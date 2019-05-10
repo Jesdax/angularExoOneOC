@@ -1,4 +1,6 @@
-<h2>{{ title }}</h2>
-<p>{{ contentItem }}</p>
-<button class="btn btn-success" (click)="onMore()">Love it</button>
-<button class="btn btn-danger">Don't love it</button>
+<li [ngClass]="{'list-group-item': true, 'list-group-item-success': loveIts > 0, 'list-group-item-danger': loveIts < 0}">
+  <h2 [ngStyle]="{color: getColor()}">{{ title }}</h2><p>{{ update | date: 'short'  }}</p>
+  <p>{{ contentItem }}</p>
+  <button class="btn btn-success" (click)="onMore()">Love it</button>
+  <button class="btn btn-danger" (click)="onLess()">Don't love it</button>
+</li>
